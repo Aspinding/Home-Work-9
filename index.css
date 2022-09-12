@@ -1,0 +1,141 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.flex_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  background-color: #E6E5F4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -----------------HEADER */
+.header{
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.header_title{
+  color: #4B4545;
+  text-align: center;
+  font-size: 24px;
+  padding-bottom: 20px;
+}
+
+.nav_list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 5px;
+  list-style-type: none;
+}
+
+.button {
+  font-size: 20px;
+  color: #FFFFFF;
+  border: none;
+  background-color: #78C99A;
+  padding: 10px 15px;
+  border-radius: 22px;
+  transition: 800ms; 
+}
+
+.button:hover {
+  color: #000000;
+  transform: scale(1.2);
+  background-color: #F4CA16;
+}
+
+/* ------------------MAIN */
+
+.main {
+  flex-grow: 1;
+  padding: 20px 0;
+}
+
+.main_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 30px 10px 30px;
+}
+
+.main_item {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  background-color: rgb(84,11,130);
+  color: aliceblue;
+  font-size: 24px;
+  transition: transform 1500ms; 
+}
+.main_item:hover{
+  transform:  rotate(360deg);
+}
+
+/* ----------------------------------BALL */
+.main_container_ball{
+  position: relative;
+  height: 500px;
+}
+.ball{
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background-color: red;
+  animation: Ball 8000ms linear infinite alternate;
+}
+.ball:hover{
+  animation-play-state: paused;
+}
+@keyframes Ball {
+
+  0% {
+    top: 0;
+    left: 0;
+    background-color: red;
+  }
+  20% {
+    left: 20%;
+    top: 50%;
+    background-color: green;
+  }
+  40%{
+    left: 40%;
+    top: 0%;
+    background-color: blue;
+  }
+  60% {
+    left: 60%;
+    top: 50%;
+    background-color: pink;
+  }
+  80% {
+    left: 80%;
+    top: 0%;
+    background-color: black;
+  }
+  100% {
+    left: calc(100% - 70px);
+    top: 50%;
+    background-color: yellow;
+  }
+}
